@@ -4,9 +4,12 @@ import Header from './components/Header'
 import CartScreen from './screens/CartScreen'
 import HomeScreen from './screens/HomeScreen'
 
+import {CartProvider} from 'react-use-cart'
+
 const App = () => {
   return (
     <Router>
+      <CartProvider>
       <Header />
       <section className='container'>
         <Routes>
@@ -14,6 +17,7 @@ const App = () => {
             <Route path='/Cart' exact element={<CartScreen/>}/>
         </Routes>
         </section>
+        </CartProvider>
     </Router>
   )
 }

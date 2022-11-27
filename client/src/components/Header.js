@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import {useCart} from 'react-use-cart'
 
 const Header = () => {
+  const {totalItems} = useCart();
   return (
 <nav className="navbar navbar-dark navbar-expand-lg bg-dark">
   <div className="container">
@@ -15,7 +17,7 @@ const Header = () => {
           <Link className="nav-link active" aria-current="page" to="/">HOME</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/Cart">CART</Link>
+          <Link className="nav-link active" aria-current="page" to="/Cart">CART ({totalItems})</Link>
         </li>
 
       </ul>
